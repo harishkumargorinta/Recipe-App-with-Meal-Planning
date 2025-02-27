@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner & Recipe Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="java.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meal Planner & Recipe Search</h1>
+          
+        </header>
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="right-section">
+                <h2>Does this sound like you?</h2>
+                <ul>
+                    <li>Wasted a lot of time thinking about what I should make for dinner today</li>
+                    <li>Want to watch what I eat but don’t know how?</li>
+                    <li>Not good at pre-planning meals</li>
+                    <li>Want to track my weight and calorie intake</li>
+                </ul>
+                
+            </div>
+        </div>
+        
+        <!-- Search Section with Filters -->
+        <div class="search-section">
+            <input type="text" id="searchQuery" placeholder="Search by ingredients, cuisine, or diet">
+            <select id="cuisineFilter">
+                <option value="">Select Cuisine</option>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="indian">Indian</option>
+            </select>
+            <select id="dietFilter">
+                <option value="">Select Diet</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+            </select>
+            <select id="prepTimeFilter">
+                <option value="">Select Prep Time</option>
+                <option value="15">Under 15 mins</option>
+                <option value="30">Under 30 mins</option>
+                <option value="60">Under 60 mins</option>
+            </select>
+            <button onclick="searchRecipes()">Search</button>
+        </div>
+        
+        <!-- Search Results -->
+        <div id="searchResults" class="results-grid"></div>
+        
+        <!-- Recipe Details Modal -->
+        <div id="recipeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="recipeDetails"></div>
+                <button id="saveToFavorites">Save to Favorites</button>
+            </div>
+        </div>
+        
+        <!-- Favorites Section -->
+        <h2>Favorites</h2>
+        <div id="favoritesList" class="results-grid"></div>
+        
+        <!-- Meal Planner (Drag-and-Drop) -->
+        <h2>Meal Planner</h2>
+        <div id="mealPlanner" class="meal-planner-grid" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
