@@ -44,6 +44,24 @@ button:hover {
     margin-top: 20px;
 }
 
+.search-history {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.search-history p {
+    margin: 5px 0;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.search-history p:hover {
+    text-decoration: underline;
+}
+
 .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -66,7 +84,7 @@ button:hover {
 .modal {
     display: none;
     position: fixed;
-    top: 10%;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -79,7 +97,10 @@ button:hover {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    width: 50%;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .close {
@@ -129,6 +150,7 @@ button:hover {
     color: white;
 }
 
+/* Meal Planner Styling */
 .meal-day {
     margin-bottom: 20px;
     padding: 10px;
@@ -137,28 +159,42 @@ button:hover {
     background: #f9f9f9;
 }
 
+.meal-day h3 {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.meals-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .meal-category {
-    margin-top: 10px;
+    flex: 1;
+    min-width: 200px;
 }
 
 .meal-category h4 {
     color: #333;
     margin-bottom: 5px;
+    font-size: 1.2em;
 }
 
 .meal-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
 }
 
 .meal-card {
+    background: white;
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
-    background: white;
     text-align: center;
-    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .meal-card img {
@@ -171,13 +207,74 @@ button:hover {
 .meal-card h3 {
     font-size: 16px;
     margin: 5px 0;
+    color: #333;
 }
 
-.meal-card button {
-    background-color: #FF4500;
+.meal-card .remove-btn {
+    background-color: #FF4500; /* OrangeRed */
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;
+    transition: background 0.3s;
+}
+
+.meal-card .remove-btn:hover {
+    background-color: #e03e00;
+}
+
+.day-totals {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Recipe and Favorite Cards */
+.recipe-card {
+    background-color: rgba(255, 99, 71, 0.8); /* Warm red-orange */
+    color: white;
+}
+
+.favorite-card {
+    background-color: rgba(255, 165, 0, 0.8); /* Orange */
+    color: white;
+}
+
+.favorite-btn {
+    background-color: #FFD700; /* Gold */
+    color: black;
+}
+
+.meal-plan-btn {
+    background-color: #32CD32; /* Lime Green */
+    color: white;
+}
+
+.remove-btn {
+    background-color: #FF4500; /* OrangeRed */
+    color: white;
+}
+
+.view-details-btn {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+.modal-scroll h2 {
+    color: #FF4500;
+}
+
+.modal-scroll h3 {
+    color: #32CD32;
+}
+
+.modal-scroll h3:nth-of-type(3) {
+    color: #FFD700;
+}
+
+#totalNutrients {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
 }
